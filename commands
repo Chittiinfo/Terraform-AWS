@@ -1,0 +1,5 @@
+terrafrom init
+terraform plan
+terraform state list
+terraform apply
+terraform -var-file=
