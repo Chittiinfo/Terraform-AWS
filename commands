@@ -1,5 +1,6 @@
 terrafrom init
 terraform plan
+terraform plan -input=false
 terraform state list
 terraform apply
 terraform apply --auto-approve
