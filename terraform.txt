@@ -1,0 +1,759 @@
+2022-10-16T20:55:06.767+0530 [INFO]  Terraform version: 1.2.0
+2022-10-16T20:55:06.769+0530 [DEBUG] using github.com/hashicorp/go-tfe v1.0.0
+2022-10-16T20:55:06.769+0530 [DEBUG] using github.com/hashicorp/hcl/v2 v2.12.0
+2022-10-16T20:55:06.769+0530 [DEBUG] using github.com/hashicorp/terraform-config-inspect v0.0.0-20210209133302-4fd17a0faac2
+2022-10-16T20:55:06.769+0530 [DEBUG] using github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734
+2022-10-16T20:55:06.769+0530 [DEBUG] using github.com/zclconf/go-cty v1.10.0
+2022-10-16T20:55:06.769+0530 [INFO]  Go runtime version: go1.18.1
+2022-10-16T20:55:06.769+0530 [INFO]  CLI args: []string{"C:\\Nag Data\\softwares\\terraform_1.2.0_windows_amd64\\terraform.exe", "plan"}
+2022-10-16T20:55:06.769+0530 [TRACE] Stdout is a terminal of width 78
+2022-10-16T20:55:06.769+0530 [TRACE] Stderr is a terminal of width 78
+2022-10-16T20:55:06.769+0530 [TRACE] Stdin is a terminal
+2022-10-16T20:55:06.772+0530 [DEBUG] Attempting to open CLI config file: C:\Users\deepu\AppData\Roaming\terraform.rc
+2022-10-16T20:55:06.772+0530 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2022-10-16T20:55:06.772+0530 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2022-10-16T20:55:06.772+0530 [DEBUG] ignoring non-existing provider search directory C:\Users\deepu\AppData\Roaming\terraform.d\plugins
+2022-10-16T20:55:06.773+0530 [DEBUG] ignoring non-existing provider search directory C:\Users\deepu\AppData\Roaming\HashiCorp\Terraform\plugins
+2022-10-16T20:55:06.773+0530 [INFO]  CLI command args: []string{"plan"}
+2022-10-16T20:55:06.791+0530 [TRACE] Meta.Backend: built configuration for "s3" backend with hash value 3197883022
+2022-10-16T20:55:06.795+0530 [TRACE] Preserving existing state lineage "dba157db-468e-af7d-0bc2-151e99790b7a"
+2022-10-16T20:55:06.795+0530 [TRACE] Preserving existing state lineage "dba157db-468e-af7d-0bc2-151e99790b7a"
+2022-10-16T20:55:06.797+0530 [TRACE] Meta.Backend: working directory was previously initialized for "s3" backend
+2022-10-16T20:55:06.797+0530 [TRACE] Meta.Backend: using already-initialized, unchanged "s3" backend configuration
+2022-10-16T20:55:06.809+0530 [INFO]  AWS Auth provider used: "SharedCredentialsProvider"
+2022-10-16T20:55:06.812+0530 [DEBUG] Trying to get account information via sts:GetCallerIdentity
+2022-10-16T20:55:06.820+0530 [DEBUG] [aws-sdk-go] DEBUG: Request sts/GetCallerIdentity Details:
+---[ REQUEST POST-SIGN ]-----------------------------
+POST / HTTP/1.1
+Host: sts.amazonaws.com
+User-Agent: APN/1.0 HashiCorp/1.0 Terraform/1.2.0 aws-sdk-go/1.42.35 (go1.18.1; windows; amd64)
+Content-Length: 43
+Authorization: AWS4-HMAC-SHA256 Credential=AKIA46CSTXN3RQSYP2GM/20221016/us-east-1/sts/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date, Signature=80acecfa59247d3065ad13feef674f67db0e756c5594c2631df67365a47b788b
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+X-Amz-Date: 20221016T152506Z
+Accept-Encoding: gzip
+
+Action=GetCallerIdentity&Version=2011-06-15
+-----------------------------------------------------
+2022-10-16T20:55:07.972+0530 [DEBUG] [aws-sdk-go] DEBUG: Response sts/GetCallerIdentity Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 400
+Content-Type: text/xml
+Date: Sun, 16 Oct 2022 15:25:07 GMT
+X-Amzn-Requestid: b53f2195-5f87-4bbc-9bae-048d2e36d3d6
+
+
+-----------------------------------------------------
+2022-10-16T20:55:07.972+0530 [DEBUG] [aws-sdk-go] <GetCallerIdentityResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+  <GetCallerIdentityResult>
+    <Arn>arn:aws:iam::889231489911:user/nag</Arn>
+    <UserId>AIDA46CSTXN3YX6MAJ6MG</UserId>
+    <Account>889231489911</Account>
+  </GetCallerIdentityResult>
+  <ResponseMetadata>
+    <RequestId>b53f2195-5f87-4bbc-9bae-048d2e36d3d6</RequestId>
+  </ResponseMetadata>
+</GetCallerIdentityResponse>
+2022-10-16T20:55:07.976+0530 [TRACE] Meta.Backend: instantiated backend of type *s3.Backend
+2022-10-16T20:55:07.982+0530 [TRACE] providercache.fillMetaCache: scanning directory .terraform\providers
+2022-10-16T20:55:07.986+0530 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/aws v4.5.0 for windows_amd64 at .terraform\providers\registry.terraform.io\hashicorp\aws\4.5.0\windows_amd64
+2022-10-16T20:55:07.987+0530 [TRACE] providercache.fillMetaCache: including .terraform\providers\registry.terraform.io\hashicorp\aws\4.5.0\windows_amd64 as a candidate package for registry.terraform.io/hashicorp/aws 4.5.0
+2022-10-16T20:55:08.760+0530 [DEBUG] checking for provisioner in "."
+2022-10-16T20:55:08.760+0530 [DEBUG] checking for provisioner in "C:\\Nag Data\\softwares\\terraform_1.2.0_windows_amd64"
+2022-10-16T20:55:08.761+0530 [TRACE] Meta.Backend: backend *s3.Backend does not support operations, so wrapping it in a local backend
+2022-10-16T20:55:08.767+0530 [INFO]  backend/local: starting Plan operation
+2022-10-16T20:55:08.767+0530 [TRACE] backend/local: requesting state manager for workspace "default"
+2022-10-16T20:55:08.773+0530 [DEBUG] [aws-sdk-go] DEBUG: Request s3/ListObjects Details:
+---[ REQUEST POST-SIGN ]-----------------------------
+GET /?max-keys=1000&prefix=env%3A%2F HTTP/1.1
+Host: chitti7702.s3.ap-south-1.amazonaws.com
+User-Agent: APN/1.0 HashiCorp/1.0 Terraform/1.2.0 aws-sdk-go/1.42.35 (go1.18.1; windows; amd64)
+Authorization: AWS4-HMAC-SHA256 Credential=AKIA46CSTXN3RQSYP2GM/20221016/ap-south-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=5a7a6fe589cf3eec1a56aad0bda4b84f7961051583995f50179f62769c6de347
+X-Amz-Content-Sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+X-Amz-Date: 20221016T152508Z
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------
+2022-10-16T20:55:09.529+0530 [DEBUG] [aws-sdk-go] DEBUG: Response s3/ListObjects Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: application/xml
+Date: Sun, 16 Oct 2022 15:25:10 GMT
+Server: AmazonS3
+X-Amz-Bucket-Region: ap-south-1
+X-Amz-Id-2: W54HioIU44llLLicBpiLqsrkuqXX4aJKwadZAvzfqxCIIjg06K53J8Qm2QLgWAYXjQFEdGFsf50=
+X-Amz-Request-Id: G5EM5RR7P90B4XP5
+
+
+-----------------------------------------------------
+2022-10-16T20:55:09.529+0530 [DEBUG] [aws-sdk-go] <?xml version="1.0" encoding="UTF-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>chitti7702</Name><Prefix>env:/</Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><IsTruncated>false</IsTruncated></ListBucketResult>
+2022-10-16T20:55:09.531+0530 [TRACE] backend/local: requesting state lock for workspace "default"
+2022-10-16T20:55:09.546+0530 [TRACE] backend/local: reading remote state for workspace "default"
+2022-10-16T20:55:09.548+0530 [DEBUG] [aws-sdk-go] DEBUG: Request s3/GetObject Details:
+---[ REQUEST POST-SIGN ]-----------------------------
+GET /terraform.tfstate HTTP/1.1
+Host: chitti7702.s3.ap-south-1.amazonaws.com
+User-Agent: APN/1.0 HashiCorp/1.0 Terraform/1.2.0 aws-sdk-go/1.42.35 (go1.18.1; windows; amd64)
+Authorization: AWS4-HMAC-SHA256 Credential=AKIA46CSTXN3RQSYP2GM/20221016/ap-south-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=afbbadd4760f4fb84345e149d14754bdb65958b7a41f3a6e0b67c9c79ba2cbb9
+X-Amz-Content-Sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+X-Amz-Date: 20221016T152509Z
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------
+2022-10-16T20:55:09.724+0530 [DEBUG] [aws-sdk-go] DEBUG: Response s3/GetObject Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 8330
+Accept-Ranges: bytes
+Content-Type: application/json
+Date: Sun, 16 Oct 2022 15:25:10 GMT
+Etag: "fc7048397d5559990ca15b6dba0aac3c"
+Last-Modified: Sun, 16 Oct 2022 15:04:15 GMT
+Server: AmazonS3
+X-Amz-Id-2: Fav8DkDuud7k4mzaoZupawBYSqGudcVGyCs6q9L6lBG0aQNxO7wGpPHeazxcw32enQvI/Nid3Yw=
+X-Amz-Request-Id: G5EYXVZ3MXQVGR8B
+
+
+-----------------------------------------------------
+2022-10-16T20:55:09.724+0530 [DEBUG] [aws-sdk-go]
+2022-10-16T20:55:09.733+0530 [TRACE] backend/local: populating backend.LocalRun for current working directory
+2022-10-16T20:55:09.736+0530 [TRACE] Config.VerifyDependencySelections: provider registry.terraform.io/hashicorp/aws has 4.5.0 to satisfy "4.5.0"
+2022-10-16T20:55:09.737+0530 [TRACE] terraform.NewContext: starting
+2022-10-16T20:55:09.737+0530 [TRACE] terraform.NewContext: complete
+2022-10-16T20:55:09.737+0530 [TRACE] backend/local: requesting interactive input, if necessary
+2022-10-16T20:55:09.738+0530 [TRACE] LoadSchemas: retrieving schema for provider type "registry.terraform.io/hashicorp/aws"
+2022-10-16T20:55:09.738+0530 [TRACE] terraform.contextPlugins: Initializing provider "registry.terraform.io/hashicorp/aws" to read its schema
+2022-10-16T20:55:09.739+0530 [DEBUG] created provider logger: level=trace
+2022-10-16T20:55:09.740+0530 [INFO]  provider: configuring client automatic mTLS
+2022-10-16T20:55:09.757+0530 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe args=[.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe]
+2022-10-16T20:55:09.792+0530 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe pid=71988
+2022-10-16T20:55:09.793+0530 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe
+2022-10-16T20:55:09.913+0530 [INFO]  provider.terraform-provider-aws_v4.5.0_x5.exe: configuring server automatic mTLS: timestamp=2022-10-16T20:55:09.913+0530
+2022-10-16T20:55:09.922+0530 [DEBUG] provider: using plugin: version=5
+2022-10-16T20:55:09.923+0530 [DEBUG] provider.terraform-provider-aws_v4.5.0_x5.exe: plugin address: address=127.0.0.1:10000 network=tcp timestamp=2022-10-16T20:55:09.922+0530
+2022-10-16T20:55:09.951+0530 [TRACE] provider.stdio: waiting for stdio data
+2022-10-16T20:55:09.951+0530 [TRACE] GRPCProvider: GetProviderSchema
+2022-10-16T20:55:09.952+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Received request: @module=sdk.proto tf_rpc=GetSchema @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:329 tf_proto_version=5 tf_provider_addr=provider tf_req_id=6a4b4037-2f09-ea79-e6c9-9ba0e17f7ea4 timestamp=2022-10-16T20:55:09.951+0530
+2022-10-16T20:55:09.952+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Calling downstream: @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:336 tf_req_id=6a4b4037-2f09-ea79-e6c9-9ba0e17f7ea4 tf_rpc=GetSchema @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider timestamp=2022-10-16T20:55:09.951+0530
+2022-10-16T20:55:09.976+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Called downstream: @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:342 @module=sdk.proto tf_req_id=6a4b4037-2f09-ea79-e6c9-9ba0e17f7ea4 tf_proto_version=5 tf_provider_addr=provider tf_rpc=GetSchema timestamp=2022-10-16T20:55:09.976+0530
+2022-10-16T20:55:09.982+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Served request: @module=sdk.proto tf_req_id=6a4b4037-2f09-ea79-e6c9-9ba0e17f7ea4 tf_proto_version=5 tf_provider_addr=provider tf_rpc=GetSchema @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:348 timestamp=2022-10-16T20:55:09.982+0530
+2022-10-16T20:55:10.085+0530 [TRACE] GRPCProvider: Close
+2022-10-16T20:55:10.086+0530 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2022-10-16T20:55:10.108+0530 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe pid=71988
+2022-10-16T20:55:10.108+0530 [DEBUG] provider: plugin exited
+2022-10-16T20:55:10.108+0530 [TRACE] Context.Input: Prompting for provider arguments
+2022-10-16T20:55:10.109+0530 [TRACE] Context.Input: Provider provider.aws declared at main.tf:18,1-15
+2022-10-16T20:55:10.109+0530 [TRACE] Context.Input: Input for provider.aws: map[string]cty.Value{}
+2022-10-16T20:55:10.109+0530 [TRACE] backend/local: running validation operation
+2022-10-16T20:55:10.112+0530 [DEBUG] Building and walking validate graph
+2022-10-16T20:55:10.113+0530 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2022-10-16T20:55:10.113+0530 [TRACE] ConfigTransformer: Starting for path:
+2022-10-16T20:55:10.115+0530 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  ------
+2022-10-16T20:55:10.115+0530 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2022-10-16T20:55:10.116+0530 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.116+0530 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2022-10-16T20:55:10.116+0530 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2022-10-16T20:55:10.116+0530 [TRACE] Executing graph transform *terraform.LocalTransformer
+2022-10-16T20:55:10.117+0530 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2022-10-16T20:55:10.117+0530 [TRACE] Executing graph transform *terraform.OutputTransformer
+2022-10-16T20:55:10.117+0530 [TRACE] OutputTransformer: adding vpc_id as *terraform.NodeApplyableOutput
+2022-10-16T20:55:10.117+0530 [TRACE] OutputTransformer: adding subnet1 as *terraform.NodeApplyableOutput
+2022-10-16T20:55:10.117+0530 [TRACE] OutputTransformer: adding subnet2 as *terraform.NodeApplyableOutput
+2022-10-16T20:55:10.117+0530 [TRACE] OutputTransformer: adding subnet3 as *terraform.NodeApplyableOutput
+2022-10-16T20:55:10.118+0530 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  output.subnet1 - *terraform.NodeApplyableOutput
+  output.subnet2 - *terraform.NodeApplyableOutput
+  output.subnet3 - *terraform.NodeApplyableOutput
+  output.vpc_id - *terraform.NodeApplyableOutput
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.118+0530 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2022-10-16T20:55:10.118+0530 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2022-10-16T20:55:10.118+0530 [TRACE] Executing graph transform *terraform.StateTransformer
+2022-10-16T20:55:10.118+0530 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2022-10-16T20:55:10.118+0530 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2022-10-16T20:55:10.118+0530 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2022-10-16T20:55:10.118+0530 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2022-10-16T20:55:10.118+0530 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2022-10-16T20:55:10.118+0530 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2022-10-16T20:55:10.118+0530 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching to "aws_subnet.subnet3-public" (*terraform.NodeValidatableResource) config from subnets.tf:29,1-39
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_subnet.subnet3-public
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching to "aws_vpc.vpc1" (*terraform.NodeValidatableResource) config from vpc.tf:1,1-26
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_vpc.vpc1
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching to "aws_subnet.subnet1-public" (*terraform.NodeValidatableResource) config from subnets.tf:1,1-39
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_subnet.subnet1-public
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching to "aws_subnet.subnet2-public" (*terraform.NodeValidatableResource) config from subnets.tf:15,1-39
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_subnet.subnet2-public
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching to "aws_internet_gateway.default" (*terraform.NodeValidatableResource) config from vpc.tf:11,1-42
+2022-10-16T20:55:10.118+0530 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_internet_gateway.default
+2022-10-16T20:55:10.118+0530 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2022-10-16T20:55:10.118+0530 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2022-10-16T20:55:10.118+0530 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2022-10-16T20:55:10.118+0530 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/hashicorp/aws\"]" provider configuration from main.tf:18,1-15
+2022-10-16T20:55:10.118+0530 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  output.subnet1 - *terraform.NodeApplyableOutput
+  output.subnet2 - *terraform.NodeApplyableOutput
+  output.subnet3 - *terraform.NodeApplyableOutput
+  output.vpc_id - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.118+0530 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2022-10-16T20:55:10.119+0530 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2022-10-16T20:55:10.119+0530 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2022-10-16T20:55:10.119+0530 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_subnet.subnet2-public
+2022-10-16T20:55:10.119+0530 [DEBUG] ProviderTransformer: "aws_subnet.subnet2-public" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.120+0530 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_internet_gateway.default
+2022-10-16T20:55:10.120+0530 [DEBUG] ProviderTransformer: "aws_internet_gateway.default" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.120+0530 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_subnet.subnet3-public
+2022-10-16T20:55:10.120+0530 [DEBUG] ProviderTransformer: "aws_subnet.subnet3-public" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.120+0530 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_vpc.vpc1
+2022-10-16T20:55:10.120+0530 [DEBUG] ProviderTransformer: "aws_vpc.vpc1" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.120+0530 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_subnet.subnet1-public
+2022-10-16T20:55:10.120+0530 [DEBUG] ProviderTransformer: "aws_subnet.subnet1-public" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.120+0530 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  output.subnet1 - *terraform.NodeApplyableOutput
+  output.subnet2 - *terraform.NodeApplyableOutput
+  output.subnet3 - *terraform.NodeApplyableOutput
+  output.vpc_id - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.120+0530 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2022-10-16T20:55:10.120+0530 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2022-10-16T20:55:10.120+0530 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  output.subnet1 - *terraform.NodeApplyableOutput
+  output.subnet2 - *terraform.NodeApplyableOutput
+  output.subnet3 - *terraform.NodeApplyableOutput
+  output.vpc_id - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.120+0530 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2022-10-16T20:55:10.120+0530 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2022-10-16T20:55:10.120+0530 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2022-10-16T20:55:10.120+0530 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_subnet.subnet3-public
+2022-10-16T20:55:10.120+0530 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_vpc.vpc1
+2022-10-16T20:55:10.120+0530 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_subnet.subnet1-public
+2022-10-16T20:55:10.120+0530 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_subnet.subnet2-public
+2022-10-16T20:55:10.120+0530 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_internet_gateway.default
+2022-10-16T20:55:10.120+0530 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.120+0530 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2022-10-16T20:55:10.120+0530 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2022-10-16T20:55:10.120+0530 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2022-10-16T20:55:10.120+0530 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2022-10-16T20:55:10.121+0530 [DEBUG] ReferenceTransformer: "output.subnet2" references: [aws_subnet.subnet2-public]
+2022-10-16T20:55:10.123+0530 [DEBUG] ReferenceTransformer: "aws_subnet.subnet3-public" references: [aws_subnet.subnet2-public aws_vpc.vpc1 var.public_subnet3_name var.public_subnet3_cidr]
+2022-10-16T20:55:10.123+0530 [DEBUG] ReferenceTransformer: "aws_vpc.vpc1" references: [var.vpc_name var.environment var.vpc_cidr]
+2022-10-16T20:55:10.123+0530 [INFO]  ReferenceTransformer: reference not found: "output.vpc_id"
+2022-10-16T20:55:10.123+0530 [DEBUG] ReferenceTransformer: "aws_subnet.subnet1-public" references: [aws_internet_gateway.default var.public_subnet1_name var.public_subnet1_cidr]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.public_subnet2_name" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.vpc_cidr" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "output.subnet1" references: [aws_subnet.subnet1-public]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "output.subnet3" references: [aws_subnet.subnet3-public]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "aws_subnet.subnet2-public" references: [aws_subnet.subnet1-public aws_vpc.vpc1 var.public_subnet2_name var.public_subnet2_cidr]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "aws_internet_gateway.default" references: [var.IGW_name aws_vpc.vpc1]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.aws_access_key" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.public_subnet1_cidr" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.public_subnet2_cidr" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "output.vpc_id" references: [aws_vpc.vpc1]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.public_subnet3_cidr" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.public_subnet3_name" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_region var.aws_secret_key var.aws_access_key]
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.public_subnet1_name" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.aws_secret_key" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.aws_region" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.vpc_name" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2022-10-16T20:55:10.124+0530 [DEBUG] ReferenceTransformer: "var.IGW_name" references: []
+2022-10-16T20:55:10.124+0530 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.IGW_name - *terraform.NodeRootVariable
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_internet_gateway.default - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet1_cidr - *terraform.NodeRootVariable
+    var.public_subnet1_name - *terraform.NodeRootVariable
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet2_cidr - *terraform.NodeRootVariable
+    var.public_subnet2_name - *terraform.NodeRootVariable
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet3_cidr - *terraform.NodeRootVariable
+    var.public_subnet3_name - *terraform.NodeRootVariable
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+    var.vpc_name - *terraform.NodeRootVariable
+  output.subnet1 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  output.subnet2 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  output.subnet3 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  output.vpc_id - *terraform.NodeApplyableOutput
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_region - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.124+0530 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2022-10-16T20:55:10.124+0530 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2022-10-16T20:55:10.124+0530 [TRACE] Executing graph transform *terraform.attachDataResourceDependsOnTransformer
+2022-10-16T20:55:10.124+0530 [TRACE] Completed graph transform *terraform.attachDataResourceDependsOnTransformer (no changes)
+2022-10-16T20:55:10.124+0530 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2022-10-16T20:55:10.124+0530 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2022-10-16T20:55:10.124+0530 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2022-10-16T20:55:10.124+0530 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2022-10-16T20:55:10.124+0530 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2022-10-16T20:55:10.124+0530 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.IGW_name - *terraform.NodeRootVariable
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_internet_gateway.default - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet1_cidr - *terraform.NodeRootVariable
+    var.public_subnet1_name - *terraform.NodeRootVariable
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet2_cidr - *terraform.NodeRootVariable
+    var.public_subnet2_name - *terraform.NodeRootVariable
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet3_cidr - *terraform.NodeRootVariable
+    var.public_subnet3_name - *terraform.NodeRootVariable
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+    var.vpc_name - *terraform.NodeRootVariable
+  output.subnet1 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  output.subnet2 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  output.subnet3 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  output.vpc_id - *terraform.NodeApplyableOutput
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_region - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+  provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+    aws_internet_gateway.default - *terraform.NodeValidatableResource
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.124+0530 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2022-10-16T20:55:10.125+0530 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.IGW_name - *terraform.NodeRootVariable
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_internet_gateway.default - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet1_cidr - *terraform.NodeRootVariable
+    var.public_subnet1_name - *terraform.NodeRootVariable
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet2_cidr - *terraform.NodeRootVariable
+    var.public_subnet2_name - *terraform.NodeRootVariable
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.public_subnet3_cidr - *terraform.NodeRootVariable
+    var.public_subnet3_name - *terraform.NodeRootVariable
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+    var.vpc_name - *terraform.NodeRootVariable
+  output.subnet1 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  output.subnet2 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  output.subnet3 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  output.vpc_id - *terraform.NodeApplyableOutput
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_region - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+  provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+    aws_internet_gateway.default - *terraform.NodeValidatableResource
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    output.subnet1 - *terraform.NodeApplyableOutput
+    output.subnet2 - *terraform.NodeApplyableOutput
+    output.subnet3 - *terraform.NodeApplyableOutput
+    output.vpc_id - *terraform.NodeApplyableOutput
+    provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.125+0530 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2022-10-16T20:55:10.125+0530 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  aws_internet_gateway.default - *terraform.NodeValidatableResource
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    var.IGW_name - *terraform.NodeRootVariable
+  aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    aws_internet_gateway.default - *terraform.NodeValidatableResource
+    var.public_subnet1_cidr - *terraform.NodeRootVariable
+    var.public_subnet1_name - *terraform.NodeRootVariable
+  aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+    var.public_subnet2_cidr - *terraform.NodeRootVariable
+    var.public_subnet2_name - *terraform.NodeRootVariable
+  aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+    var.public_subnet3_cidr - *terraform.NodeRootVariable
+    var.public_subnet3_name - *terraform.NodeRootVariable
+  aws_vpc.vpc1 - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+    var.vpc_name - *terraform.NodeRootVariable
+  output.subnet1 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet1-public - *terraform.NodeValidatableResource
+  output.subnet2 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet2-public - *terraform.NodeValidatableResource
+  output.subnet3 - *terraform.NodeApplyableOutput
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  output.vpc_id - *terraform.NodeApplyableOutput
+    aws_vpc.vpc1 - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_region - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+  provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+    aws_subnet.subnet3-public - *terraform.NodeValidatableResource
+  root - *terraform.nodeCloseModule
+    output.subnet1 - *terraform.NodeApplyableOutput
+    output.subnet2 - *terraform.NodeApplyableOutput
+    output.subnet3 - *terraform.NodeApplyableOutput
+    output.vpc_id - *terraform.NodeApplyableOutput
+    provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+  var.IGW_name - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_region - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.public_subnet1_cidr - *terraform.NodeRootVariable
+  var.public_subnet1_name - *terraform.NodeRootVariable
+  var.public_subnet2_cidr - *terraform.NodeRootVariable
+  var.public_subnet2_name - *terraform.NodeRootVariable
+  var.public_subnet3_cidr - *terraform.NodeRootVariable
+  var.public_subnet3_name - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  var.vpc_name - *terraform.NodeRootVariable
+  ------
+2022-10-16T20:55:10.125+0530 [DEBUG] Starting graph walk: walkValidate
+2022-10-16T20:55:10.126+0530 [TRACE] vertex "var.vpc_name": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.vpc_name
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.public_subnet3_name": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.public_subnet3_name
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.aws_region": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.aws_region
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.vpc_cidr": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.vpc_cidr
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.environment": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.aws_secret_key": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.aws_secret_key
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.public_subnet2_cidr": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.public_subnet2_name": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.public_subnet2_name
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.public_subnet1_name": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.public_subnet1_name
+2022-10-16T20:55:10.127+0530 [TRACE] prepareFinalInputVariableValue: preparing var.vpc_name
+2022-10-16T20:55:10.127+0530 [TRACE] prepareFinalInputVariableValue: preparing var.aws_region
+2022-10-16T20:55:10.127+0530 [TRACE] prepareFinalInputVariableValue: preparing var.vpc_cidr
+2022-10-16T20:55:10.127+0530 [TRACE] prepareFinalInputVariableValue: preparing var.public_subnet2_name
+2022-10-16T20:55:10.127+0530 [TRACE] prepareFinalInputVariableValue: preparing var.public_subnet1_name
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.IGW_name": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.IGW_name
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.aws_access_key": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] vertex "var.public_subnet1_cidr": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.environment
+2022-10-16T20:55:10.127+0530 [TRACE] prepareFinalInputVariableValue: preparing var.environment
+2022-10-16T20:55:10.127+0530 [TRACE] NodeRootVariable: evaluating var.public_subnet2_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.public_subnet2_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.aws_secret_key
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.vpc_name
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.public_subnet3_name
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet3_cidr": starting visit (*terraform.NodeRootVariable)
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.IGW_name
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.vpc_name, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.vpc_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.vpc_name": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.public_subnet2_name
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.public_subnet2_name, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet2_name": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] NodeRootVariable: evaluating var.public_subnet1_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.public_subnet1_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.public_subnet1_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.public_subnet1_cidr, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet1_cidr": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] NodeRootVariable: evaluating var.public_subnet3_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.public_subnet3_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.public_subnet3_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.public_subnet3_cidr, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet3_cidr": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.public_subnet3_name
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.public_subnet3_name, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.IGW_name
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.vpc_cidr, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.public_subnet1_name
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.vpc_cidr": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.aws_region
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.aws_region, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.aws_region": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] NodeRootVariable: evaluating var.aws_access_key
+2022-10-16T20:55:10.128+0530 [TRACE] prepareFinalInputVariableValue: preparing var.aws_access_key
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet3_name": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.IGW_name, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.IGW_name": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.public_subnet1_name, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet1_name": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.aws_secret_key
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.aws_secret_key, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.public_subnet2_cidr
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.aws_secret_key": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.public_subnet2_cidr, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.public_subnet2_cidr": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.environment
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.environment, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.environment": visit complete
+2022-10-16T20:55:10.128+0530 [TRACE] BuiltinEvalContext: Storing final value for variable var.aws_access_key
+2022-10-16T20:55:10.128+0530 [TRACE] evalVariableValidations: no validation rules declared for var.aws_access_key, so skipping
+2022-10-16T20:55:10.128+0530 [TRACE] vertex "var.aws_access_key": visit complete
+2022-10-16T20:55:10.131+0530 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/aws\"]": starting visit (*terraform.NodeApplyableProvider)
+2022-10-16T20:55:10.131+0530 [DEBUG] created provider logger: level=trace
+2022-10-16T20:55:10.131+0530 [INFO]  provider: configuring client automatic mTLS
+2022-10-16T20:55:10.147+0530 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe args=[.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe]
+2022-10-16T20:55:10.151+0530 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe pid=50920
+2022-10-16T20:55:10.151+0530 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe
+2022-10-16T20:55:10.198+0530 [INFO]  provider.terraform-provider-aws_v4.5.0_x5.exe: configuring server automatic mTLS: timestamp=2022-10-16T20:55:10.197+0530
+2022-10-16T20:55:10.206+0530 [DEBUG] provider.terraform-provider-aws_v4.5.0_x5.exe: plugin address: address=127.0.0.1:10000 network=tcp timestamp=2022-10-16T20:55:10.205+0530
+2022-10-16T20:55:10.206+0530 [DEBUG] provider: using plugin: version=5
+2022-10-16T20:55:10.221+0530 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/hashicorp/aws\"]" provider for provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.221+0530 [TRACE] NodeApplyableProvider: validating configuration for provider["registry.terraform.io/hashicorp/aws"]
+2022-10-16T20:55:10.221+0530 [TRACE] buildProviderConfig for provider["registry.terraform.io/hashicorp/aws"]: using explicit config only
+2022-10-16T20:55:10.221+0530 [TRACE] GRPCProvider: GetProviderSchema
+2022-10-16T20:55:10.221+0530 [TRACE] provider.stdio: waiting for stdio data
+2022-10-16T20:55:10.222+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Received request: @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:329 tf_req_id=f64573f5-9cdf-a4c7-5958-47f6a8a2bb3b @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider tf_rpc=GetSchema timestamp=2022-10-16T20:55:10.221+0530
+2022-10-16T20:55:10.222+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Calling downstream: @module=sdk.proto tf_req_id=f64573f5-9cdf-a4c7-5958-47f6a8a2bb3b tf_rpc=GetSchema tf_proto_version=5 tf_provider_addr=provider @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:336 timestamp=2022-10-16T20:55:10.222+0530
+2022-10-16T20:55:10.247+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Called downstream: tf_proto_version=5 tf_provider_addr=provider tf_req_id=f64573f5-9cdf-a4c7-5958-47f6a8a2bb3b @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:342 @module=sdk.proto tf_rpc=GetSchema timestamp=2022-10-16T20:55:10.245+0530
+2022-10-16T20:55:10.255+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Served request: tf_proto_version=5 tf_provider_addr=provider tf_req_id=f64573f5-9cdf-a4c7-5958-47f6a8a2bb3b @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:348 @module=sdk.proto tf_rpc=GetSchema timestamp=2022-10-16T20:55:10.254+0530
+2022-10-16T20:55:10.316+0530 [TRACE] GRPCProvider: ValidateProviderConfig
+2022-10-16T20:55:10.318+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Received request: @module=sdk.proto tf_rpc=PrepareProviderConfig tf_proto_version=5 tf_provider_addr=provider tf_req_id=d92493cf-e2c5-930e-9a04-8ee7154bf2f7 @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:354 timestamp=2022-10-16T20:55:10.318+0530
+2022-10-16T20:55:10.318+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Calling downstream: tf_provider_addr=provider tf_rpc=PrepareProviderConfig @module=sdk.proto tf_proto_version=5 tf_req_id=d92493cf-e2c5-930e-9a04-8ee7154bf2f7 @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:361 timestamp=2022-10-16T20:55:10.318+0530
+2022-10-16T20:55:10.399+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Called downstream: @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:367 @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider tf_req_id=d92493cf-e2c5-930e-9a04-8ee7154bf2f7 tf_rpc=PrepareProviderConfig timestamp=2022-10-16T20:55:10.398+0530
+2022-10-16T20:55:10.399+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Served request: tf_provider_addr=provider tf_req_id=d92493cf-e2c5-930e-9a04-8ee7154bf2f7 @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:373 tf_proto_version=5 @module=sdk.proto tf_rpc=PrepareProviderConfig timestamp=2022-10-16T20:55:10.398+0530
+2022-10-16T20:55:10.400+0530 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/aws\"]": visit complete
+2022-10-16T20:55:10.400+0530 [TRACE] vertex "aws_vpc.vpc1": starting visit (*terraform.NodeValidatableResource)
+2022-10-16T20:55:10.400+0530 [TRACE] GRPCProvider: ValidateResourceConfig
+2022-10-16T20:55:10.401+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Received request: tf_req_id=9fef2002-e3b7-a08a-e8ac-20953d5ea9a6 tf_rpc=ValidateResourceTypeConfig @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:495 @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider tf_resource_type=aws_vpc timestamp=2022-10-16T20:55:10.401+0530
+2022-10-16T20:55:10.401+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Calling downstream: tf_provider_addr=provider tf_req_id=9fef2002-e3b7-a08a-e8ac-20953d5ea9a6 tf_rpc=ValidateResourceTypeConfig tf_resource_type=aws_vpc @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:502 @module=sdk.proto tf_proto_version=5 timestamp=2022-10-16T20:55:10.401+0530
+2022-10-16T20:55:10.401+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Called downstream: @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider tf_resource_type=aws_vpc @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:508 tf_req_id=9fef2002-e3b7-a08a-e8ac-20953d5ea9a6 tf_rpc=ValidateResourceTypeConfig timestamp=2022-10-16T20:55:10.401+0530
+2022-10-16T20:55:10.401+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Served request: @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:514 @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider tf_req_id=9fef2002-e3b7-a08a-e8ac-20953d5ea9a6 tf_resource_type=aws_vpc tf_rpc=ValidateResourceTypeConfig timestamp=2022-10-16T20:55:10.401+0530
+2022-10-16T20:55:10.401+0530 [TRACE] vertex "aws_vpc.vpc1": visit complete
+2022-10-16T20:55:10.401+0530 [TRACE] vertex "output.vpc_id": starting visit (*terraform.NodeApplyableOutput)
+2022-10-16T20:55:10.402+0530 [TRACE] vertex "aws_internet_gateway.default": starting visit (*terraform.NodeValidatableResource)
+2022-10-16T20:55:10.406+0530 [TRACE] GRPCProvider: ValidateResourceConfig
+2022-10-16T20:55:10.406+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Received request: @module=sdk.proto tf_proto_version=5 tf_provider_addr=provider tf_req_id=89bae93d-8b45-88df-e694-b3193bb3995e tf_resource_type=aws_internet_gateway tf_rpc=ValidateResourceTypeConfig @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:495 timestamp=2022-10-16T20:55:10.406+0530
+2022-10-16T20:55:10.406+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Calling downstream: tf_proto_version=5 tf_provider_addr=provider tf_req_id=89bae93d-8b45-88df-e694-b3193bb3995e tf_resource_type=aws_internet_gateway @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:502 tf_rpc=ValidateResourceTypeConfig @module=sdk.proto timestamp=2022-10-16T20:55:10.406+0530
+2022-10-16T20:55:10.406+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Called downstream: @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:508 @module=sdk.proto tf_req_id=89bae93d-8b45-88df-e694-b3193bb3995e tf_resource_type=aws_internet_gateway tf_provider_addr=provider tf_rpc=ValidateResourceTypeConfig tf_proto_version=5 timestamp=2022-10-16T20:55:10.406+0530
+2022-10-16T20:55:10.406+0530 [TRACE] provider.terraform-provider-aws_v4.5.0_x5.exe: Served request: @module=sdk.proto tf_proto_version=5 tf_req_id=89bae93d-8b45-88df-e694-b3193bb3995e tf_resource_type=aws_internet_gateway tf_rpc=ValidateResourceTypeConfig @caller=github.com/hashicorp/terraform-plugin-go@v0.5.0/tfprotov5/tf5server/server.go:514 tf_provider_addr=provider timestamp=2022-10-16T20:55:10.406+0530
+2022-10-16T20:55:10.406+0530 [TRACE] vertex "aws_internet_gateway.default": visit complete
+2022-10-16T20:55:10.406+0530 [TRACE] vertex "aws_subnet.subnet1-public": starting visit (*terraform.NodeValidatableResource)
+2022-10-16T20:55:10.407+0530 [TRACE] setValue: Saving Create change for output.vpc_id in changeset
+2022-10-16T20:55:10.407+0530 [TRACE] setValue: Removing output.vpc_id from state (it is now null)
+2022-10-16T20:55:10.407+0530 [TRACE] vertex "output.vpc_id": visit complete
+2022-10-16T20:55:10.407+0530 [ERROR] vertex "aws_subnet.subnet1-public" error: Reference to undeclared resource
+2022-10-16T20:55:10.407+0530 [TRACE] vertex "aws_subnet.subnet1-public": visit complete, with errors
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "output.subnet1" errored, so skipping
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "aws_subnet.subnet2-public" errored, so skipping
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "aws_subnet.subnet3-public" errored, so skipping
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "output.subnet2" errored, so skipping
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" errored, so skipping
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "output.subnet3" errored, so skipping
+2022-10-16T20:55:10.407+0530 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2022-10-16T20:55:10.412+0530 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2022-10-16T20:55:10.431+0530 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/aws/4.5.0/windows_amd64/terraform-provider-aws_v4.5.0_x5.exe pid=50920
+2022-10-16T20:55:10.431+0530 [DEBUG] provider: plugin exited

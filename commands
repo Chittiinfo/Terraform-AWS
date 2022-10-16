@@ -2,6 +2,30 @@ terrafrom init
 terraform plan
 terraform plan -input=false
 terraform state list
+terraform state rm aws_dynamodb_table.dynamodb-terraform-state-lock  - To remove particular state from terrafrom
+-------------
+$ terraform state rm aws_dynamodb_table.dynamodb-terraform-state-lock
+Removed aws_dynamodb_table.dynamodb-terraform-state-lock
+Successfully removed 1 resource instance(s).
+-------------
 terraform apply
 terraform apply --auto-approve
-terraform -var-file=
+terraform -var-file= (-var switch or using --var-file for tfvars)
+
+terraform fmt  - To valiate and correct syntax automatically
+
+terraform validate   - To validate format
+
+terraform TRACE\DEBUG\ERROR\WARN\INFO  -- debugging and logging in terraform
+----------------------------------
+PowerShell
+> $env:TF_LOG="TRACE"
+> $env:TF_LOG_PATH="terraform.txt"
+
+Bash
+$ export TF_LOG="TRACE"
+$ export TF_LOG_PATH="terraform.txt"
+
+
+unset file_name   - to delete env varible
+-----------------------------------
