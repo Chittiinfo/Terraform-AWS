@@ -12,6 +12,7 @@ Successfully removed 1 resource instance(s).
 terraform apply
 terraform apply --auto-approve
 terraform -var-file= (-var switch or using --var-file for tfvars)
+terraform plan --var-file dev.tfvars
 
 terraform fmt  - To valiate and correct syntax automatically
 
@@ -30,3 +31,15 @@ $ export TF_LOG_PATH="terraform.txt"
 
 unset file_name   - to delete env varible
 -----------------------------------
+
+Workspaces:
+
+terraform workspace new dev;  terraform workspace new uat;  terraform workspace new prod;  terraform workspace list;
+terraform workspace list
+terraform workspace select dev
+terraform workspace show
+terraform apply --var-file ./dev.tfvars
+terraform workspace select uat
+terraform apply --var-file ./uat.tfvars
+terraform workspace select prod
+terraform apply --var-file ./prod.tfvars
