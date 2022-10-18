@@ -12,3 +12,6 @@ variable "public_subnet2_name" {}
 variable "public_subnet3_cidr" {}
 variable "public_subnet3_name" {}
 variable "Main_Routing_Table" {}
+variable "imagename" {}
+variable "instance_type" {}
+variable "key_name" {}
