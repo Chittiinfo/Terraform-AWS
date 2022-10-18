@@ -43,3 +43,4 @@ terraform workspace select uat
 terraform apply --var-file ./uat.tfvars
 terraform workspace select prod
 terraform apply --var-file ./prod.tfvars
+terraform import aws_vpc.default vpc-0649bb7f79462f2e9
